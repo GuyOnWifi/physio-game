@@ -214,6 +214,7 @@ def gen_frames():
             # Display angles on frame
             h, w, c = image.shape
 
+            """
             # Right arm angles
             cv2.putText(image, f'Left Elbow: {int(left_elbow_angle)}deg', 
                         (int(left_elbow[0] * w), int(left_elbow[1] * h) - 10), 
@@ -245,7 +246,8 @@ def gen_frames():
             cv2.putText(image, f'Right Knee: {int(right_knee_angle)}deg', 
                         (int(right_knee[0] * w), int(right_knee[1] * h) - 10), 
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
-
+            """
+            
             current_angles = {
                 'left_shoulder': left_shoulder_angle,
                 'left_elbow': left_elbow_angle,
@@ -260,10 +262,6 @@ def gen_frames():
             # Get the current target pose value (you'll need to pass this from the frontend)
             # For testing, you can hardcode a value
             pose_score = calculate_pose_score(current_angles, current_pose_val)
-            
-            cv2.putText(image, f'Current Pose Score: {pose_score}', 
-                       (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 
-                       1, (255, 255, 255), 2, cv2.LINE_AA)
 
             scoring_effect = pose_score
 
