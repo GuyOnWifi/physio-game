@@ -1,0 +1,14 @@
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dance-move {
+  width: 100px;
+}
+
+.removed {
+  width: 0px;
+  transition: 0.3s all linear;
+}
